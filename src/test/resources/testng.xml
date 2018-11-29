@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+
+ <!--   <test name="PositiveTest" >
+        <groups>
+            <run>
+                <include name="existence"/>
+                <include name="rectangle"/>
+                <include name="equil"/>
+                <include name="isosc"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="triangle.positive.Positive"/>
+        </classes>
+    </test>-->
+
+    <test name="NegativeTest">
+        <groups>
+            <run>
+                <include name="existence"/>
+                <include name="rectangle"/>
+                <include name="equil"/>
+                <include name="isosc"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="triangle.negative.Negative"/>
+        </classes>
+    </test>
+</suite>
