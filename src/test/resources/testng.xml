@@ -2,20 +2,21 @@
 
 <suite name="Suite1" verbose="1" >
 
- <!--   <test name="PositiveTest" >
+    <test name="PositiveTest" >
         <groups>
             <run>
                 <include name="existence"/>
                 <include name="rectangle"/>
                 <include name="equil"/>
                 <include name="isosc"/>
+                <include name="ordinary"/>
             </run>
         </groups>
 
         <classes>
             <class name="triangle.positive.Positive"/>
         </classes>
-    </test>-->
+    </test>
 
     <test name="NegativeTest">
         <groups>

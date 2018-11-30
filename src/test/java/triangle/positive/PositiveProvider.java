@@ -12,15 +12,6 @@ public class PositiveProvider {
         };
     }
 
-   /* @DataProvider(name = "twoMoreThird")
-    public Object[][] twoMoreThird(){
-        return new Object[][]{
-                {"a", 4},
-                {"b", 6},
-                {"c", 3},
-        };
-    }*/
-
     @DataProvider(name = "rectang")
     public Object[][] rectang(){
         return new Object[][]{
@@ -48,4 +39,19 @@ public class PositiveProvider {
                 {Math.sqrt(2.0), 2.0}
         };
     }
+
+    @DataProvider(name = "ordinary")
+    public Object[][] ordinary(){
+        return new Object[][]{
+                {6.0, 7.0, 8.0}
+        };
+    }
+
+    @DataProvider(name = "overflow")
+    public Object[][] overflowSign(){
+        return new Object[][]{
+                {Double.MAX_VALUE, Double.MAX_VALUE,1.0}
+        };
+    }
+
 }
