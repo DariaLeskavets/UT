@@ -15,7 +15,9 @@ public class PositiveProvider {
     @DataProvider(name = "rectang")
     public Object[][] rectang(){
         return new Object[][]{
-                {3.0, 4.0, 5.0}
+                {3.0, 4.0, 5.0},
+                {5.0, 4.0, 3.0},
+                {3.0, 5.0, 4.0}
         };
     }
 
@@ -29,14 +31,18 @@ public class PositiveProvider {
     @DataProvider(name = "isosc")
     public Object[][] isosc(){
         return new Object[][]{
-                {3.0, 5.0}
+                {3.0, 3.0, 5.0},
+                {3.0, 5.0, 3.0},
+                {5.0, 3.0, 3.0}
         };
     }
 
     @DataProvider(name = "rect_isosc")
     public Object[][] rect_isosc(){
         return new Object[][]{
-                {Math.sqrt(2.0), 2.0}
+                {Math.sqrt(2.0), Math.sqrt(2.0), 2.0},
+                {Math.sqrt(2.0), 2.0, Math.sqrt(2.0)},
+                {2.0, Math.sqrt(2.0), Math.sqrt(2.0)}
         };
     }
 

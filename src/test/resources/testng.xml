@@ -25,6 +25,7 @@
                 <include name="rectangle"/>
                 <include name="equil"/>
                 <include name="isosc"/>
+                <include name="exceptions"/>
             </run>
         </groups>
         <classes>

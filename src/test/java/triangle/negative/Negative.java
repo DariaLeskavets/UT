@@ -2,8 +2,6 @@ package triangle.negative;
 
 import com.epam.triangle.Triangle;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class Negative {
@@ -45,6 +43,12 @@ public class Negative {
         Triangle tr3 = new Triangle(c, b, a);
         Assert.assertFalse(tr3.checkTriangle());
         Assert.assertEquals("b+c<=a", tr3.getMessage());
+    }
+
+    @Test(expectedExceptions = ArithmeticException.class, dataProvider = "exceptions", dataProviderClass = NegativeProvider.class)
+    public void exceptions(double a, double b, double c){
+        Triangle tr = new Triangle(a, b, c);
+        tr.getSquare();
     }
 
 }

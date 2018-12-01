@@ -25,4 +25,16 @@ public class NegativeProvider {
         };
     }
 
+    @DataProvider(name = "exceptions")
+    public Object[][] exceptions(){
+        return new Object[][]{
+                {Double.POSITIVE_INFINITY, 1.0, 2.0},
+                {1.0, Double.POSITIVE_INFINITY, 2.0},
+                {1.0, 2.0, Double.POSITIVE_INFINITY},
+                {Double.NEGATIVE_INFINITY, 1.0, 2.0},
+                {1.0, Double.NEGATIVE_INFINITY, 2.0},
+                {1.0, 2.0, Double.NEGATIVE_INFINITY}
+        };
+    }
+
 }

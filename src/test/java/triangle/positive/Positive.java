@@ -11,7 +11,6 @@ public class Positive {
     @Test(groups = "existence", dataProvider = "exist", dataProviderClass = PositiveProvider.class)
     public void testConstr(double a, double b, double c){
         Triangle tr = new Triangle(a, b, c);
-        Class<Triangle> triangleClass = Triangle.class;
         try {
             Field field1 = tr.getClass().getDeclaredField("a");
             field1.setAccessible(true);
@@ -53,12 +52,8 @@ public class Positive {
 
     @Test(groups = "rectangle", dataProvider = "rectang", dataProviderClass = PositiveProvider.class)
     public void rect(double a, double b, double c){
-        Triangle tr1 = new Triangle(a, b, c);
-        Assert.assertEquals(8, tr1.detectTriangle(), 1);
-        Triangle tr2 = new Triangle(c, b, a);
-        Assert.assertEquals(8, tr2.detectTriangle(), 1);
-        Triangle tr3 = new Triangle(a, c, b);
-        Assert.assertEquals(8, tr3.detectTriangle(), 1);
+        Triangle tr = new Triangle(a, b, c);
+        Assert.assertEquals(8, tr.detectTriangle(), 1);
     }
 
     @Test(groups = "equil", dataProvider = "equil", dataProviderClass = PositiveProvider.class)
@@ -68,23 +63,16 @@ public class Positive {
     }
 
     @Test(groups = "isosc", dataProvider = "isosc", dataProviderClass = PositiveProvider.class)
-    public void isosc(double a, double b){
-        Triangle tr1 = new Triangle(a, a, b);
-        Assert.assertEquals(2, tr1.detectTriangle(), 1);
-        Triangle tr2 = new Triangle(a, b, a);
-        Assert.assertEquals(2, tr2.detectTriangle(), 1);
-        Triangle tr3 = new Triangle(b, a, a);
-        Assert.assertEquals(2, tr3.detectTriangle(), 1);
+    public void isosc(double a, double b, double c){
+        Triangle tr = new Triangle(a, b, c);
+        Assert.assertEquals(2, tr.detectTriangle(), 1);
     }
 
     @Test(groups = {"rectangle", "isosc"}, dataProvider = "rect_isosc", dataProviderClass = PositiveProvider.class)
-    public void rect_isosc(double a, double b){
-        Triangle tr1 = new Triangle(a, a, b);
-        Assert.assertEquals(10, tr1.detectTriangle(), 1);
-        Triangle tr2 = new Triangle(a, b, a);
-        Assert.assertEquals(10, tr2.detectTriangle(), 1);
-        Triangle tr3 = new Triangle(b, a, a);
-        Assert.assertEquals(10, tr3.detectTriangle(), 1);
+    public void rect_isosc(double a, double b, double c){
+        Triangle tr = new Triangle(a, b, c);
+        Assert.assertEquals(10, tr.detectTriangle(), 1);
+
     }
 
     @Test(groups = "ordinary", dataProvider = "ordinary", dataProviderClass = PositiveProvider.class)
